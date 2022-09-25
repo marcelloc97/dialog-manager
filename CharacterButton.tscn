@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://CharacterButton.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/sitka-small-652.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 14
+use_mipmaps = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 0.509804 )
+
+[node name="CharacterButton" type="TextureButton"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 128, 128 )
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 1 )
+expand = true
+script = ExtResource( 2 )
+
+[node name="NameLabel" type="Label" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -26.0
+margin_bottom = -12.0
+custom_fonts/font = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+text = "Char name"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

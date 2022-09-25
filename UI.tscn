@@ -1,0 +1,334 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://DialogBoxUI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://CharacterWindow.tscn" type="PackedScene" id=2]
+[ext_resource path="res://PortraitUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI.gd" type="Script" id=4]
+[ext_resource path="res://assets/fonts/sitka-small-652.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/images/box.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/close_highlight.png" type="Texture" id=7]
+[ext_resource path="res://panel_border.tres" type="StyleBox" id=8]
+[ext_resource path="res://assets/images/close.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 0.0784314 )
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 1, 1, 0.156863 )
+
+[sub_resource type="DynamicFont" id=10]
+use_mipmaps = true
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxEmpty" id=21]
+
+[sub_resource type="StyleBoxFlat" id=22]
+bg_color = Color( 0.141176, 0.109804, 0.145098, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.180392, 0.133333, 0.184314, 0 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 12
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=23]
+bg_color = Color( 0.141176, 0.109804, 0.145098, 0.54902 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.180392, 0.133333, 0.184314, 0 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 12
+anti_aliasing = false
+
+[sub_resource type="DynamicFont" id=8]
+size = 14
+use_mipmaps = true
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxTexture" id=15]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 128, 128 )
+margin_left = 15.0
+margin_right = 14.5897
+margin_top = 14.6979
+margin_bottom = 15.0
+
+[sub_resource type="StyleBoxEmpty" id=24]
+
+[sub_resource type="DynamicFont" id=18]
+size = 14
+use_mipmaps = true
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.180392, 0.133333, 0.184314, 1 )
+border_width_top = 20
+border_color = Color( 0.141176, 0.109804, 0.145098, 1 )
+border_blend = true
+expand_margin_top = 20.0
+
+[sub_resource type="DynamicFont" id=20]
+size = 14
+use_mipmaps = true
+font_data = ExtResource( 5 )
+
+[sub_resource type="Theme" id=5]
+default_font = SubResource( 20 )
+Button/fonts/font = SubResource( 7 )
+Button/styles/disabled = SubResource( 13 )
+Button/styles/focus = SubResource( 1 )
+Button/styles/hover = SubResource( 2 )
+Button/styles/normal = SubResource( 14 )
+Button/styles/pressed = SubResource( 3 )
+Label/fonts/font = SubResource( 10 )
+LineEdit/icons/clear = ExtResource( 9 )
+LineEdit/styles/focus = SubResource( 21 )
+LineEdit/styles/normal = SubResource( 22 )
+LineEdit/styles/read_only = SubResource( 23 )
+TextEdit/colors/background_color = Color( 0, 0, 0, 0 )
+TextEdit/fonts/font = SubResource( 8 )
+TextEdit/styles/normal = SubResource( 15 )
+Tree/styles/bg = SubResource( 22 )
+Tree/styles/bg_focus = SubResource( 24 )
+WindowDialog/colors/title_color = Color( 1, 1, 1, 1 )
+WindowDialog/fonts/title_font = SubResource( 18 )
+WindowDialog/icons/close = ExtResource( 9 )
+WindowDialog/icons/close_highlight = ExtResource( 7 )
+WindowDialog/styles/panel = SubResource( 19 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.117647, 0.117647, 0.117647, 0.862745 )
+
+[sub_resource type="DynamicFont" id=25]
+size = 32
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.117647, 0.117647, 0.117647, 1 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 19
+font_data = ExtResource( 5 )
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+theme = SubResource( 5 )
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.141176, 0.109804, 0.145098, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CreditsButton" type="Button" parent="."]
+unique_name_in_owner = true
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -116.0
+margin_top = 11.0
+margin_right = -11.0
+margin_bottom = 43.0
+rect_min_size = Vector2( 32, 32 )
+text = "Créditos"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -338.0
+margin_top = -170.0
+margin_right = 338.0
+margin_bottom = -30.0
+wrap_enabled = true
+
+[node name="Actions" type="HBoxContainer" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -17.0
+margin_bottom = 48.0
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Talk" type="Button" parent="Actions"]
+margin_left = 285.0
+margin_right = 385.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 100, 65 )
+hint_tooltip = "Permite iniciar ou continuar o diálogo com base do conteúdo acima"
+mouse_default_cursor_shape = 2
+text = "Falar"
+
+[node name="Border" type="Panel" parent="Actions/Talk"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_styles/panel = ExtResource( 8 )
+
+[node name="Clear" type="Button" parent="Actions"]
+margin_left = 415.0
+margin_right = 515.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 100, 65 )
+hint_tooltip = "Limpa o conteúdo e o diálogo"
+mouse_default_cursor_shape = 2
+text = "Limpar"
+
+[node name="Border" type="Panel" parent="Actions/Clear"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_styles/panel = ExtResource( 8 )
+
+[node name="Dialog" type="Control" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 101.0
+margin_top = -172.0
+margin_right = -94.0
+margin_bottom = -32.0
+rect_min_size = Vector2( 0, 64 )
+
+[node name="Portrait" parent="Dialog" instance=ExtResource( 3 )]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -283.5
+margin_top = -64.0
+margin_right = -155.5
+
+[node name="DialogBox" parent="Dialog" instance=ExtResource( 1 )]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -115.5
+margin_top = -64.0
+margin_right = 284.5
+box_size = 400.0
+
+[node name="CharacterSelect" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="CharacterSelect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 17 )
+
+[node name="Title" type="Label" parent="CharacterSelect"]
+anchor_right = 1.0
+margin_top = 61.0
+margin_bottom = 132.0
+custom_fonts/font = SubResource( 25 )
+text = "Selecione o personagem"
+align = 1
+valign = 1
+
+[node name="Window" parent="CharacterSelect" instance=ExtResource( 2 )]
+unique_name_in_owner = true
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -272.0
+margin_top = -141.0
+margin_right = 272.0
+margin_bottom = 141.0
+
+[node name="FileDialog" type="FileDialog" parent="CharacterSelect"]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -399.0
+margin_top = -290.0
+margin_right = 399.0
+margin_bottom = 290.0
+mouse_filter = 2
+popup_exclusive = true
+window_title = "Open a File"
+mode = 0
+access = 2
+filters = PoolStringArray( "*.png", "*.jpeg", "*.jpg" )
+
+[node name="Credits" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="Credits"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 9 )
+
+[node name="Credits" type="Label" parent="Credits"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -56.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 16 )
+text = "Artes por Anthony Souza (Padeiro Cósmico)
+Programação por Marcello Carvalhal (N0obly616)
+
+Ideia da execução do projeto por Marcello Carvalhal
+Ideia das artes por Anthony Souza"
+align = 1
+valign = 1
+
+[node name="OkButton" type="Button" parent="Credits"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -63.0
+margin_top = -91.0
+margin_right = 63.0
+margin_bottom = -22.0
+text = "OK"
+
+[connection signal="resized" from="." to="." method="_on_resized"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]
+[connection signal="text_changed" from="TextEdit" to="." method="_on_TextEdit_text_changed"]
+[connection signal="pressed" from="Actions/Talk" to="." method="_on_Talk_pressed"]
+[connection signal="pressed" from="Actions/Clear" to="." method="_on_Clear_pressed"]
+[connection signal="pressed" from="Dialog/Portrait" to="." method="_on_Portrait_pressed"]
+[connection signal="popup_hide" from="CharacterSelect/Window" to="." method="_on_Window_popup_hide"]
+[connection signal="file_selected" from="CharacterSelect/FileDialog" to="." method="_on_FileDialog_file_selected"]
+[connection signal="pressed" from="Credits/OkButton" to="." method="_on_CreditsOkButton_pressed"]
