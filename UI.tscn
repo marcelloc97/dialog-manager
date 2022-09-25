@@ -183,7 +183,6 @@ margin_right = 385.0
 margin_bottom = 65.0
 rect_min_size = Vector2( 100, 65 )
 hint_tooltip = "Permite iniciar ou continuar o diálogo com base do conteúdo acima"
-mouse_default_cursor_shape = 2
 text = "Falar"
 
 [node name="Border" type="Panel" parent="Actions/Talk"]
@@ -198,7 +197,6 @@ margin_right = 515.0
 margin_bottom = 65.0
 rect_min_size = Vector2( 100, 65 )
 hint_tooltip = "Limpa o conteúdo e o diálogo"
-mouse_default_cursor_shape = 2
 text = "Limpar"
 
 [node name="Border" type="Panel" parent="Actions/Clear"]

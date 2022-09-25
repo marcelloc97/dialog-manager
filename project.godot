@@ -22,7 +22,7 @@ _global_script_class_icons={
 
 config/name="Dialog Manager"
 run/main_scene="res://UI.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/images/characters/blaidd-portrait.png"
 
 [autoload]
 
@@ -31,6 +31,8 @@ Constants="*res://Constants.gd"
 [display]
 
 window/size/width=800
+mouse_cursor/custom_image="res://assets/images/cursors/arrow.png"
+window/stretch/mode="2d"
 
 [gui]
 
