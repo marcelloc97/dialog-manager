@@ -78,6 +78,9 @@ func _on_FileDialog_file_selected(path: String):
 func _ready():
 	char_select.visible = false
 	credits_container.visible = false
+	
+	for cursor in Constants.CURSORS_MAP.values():
+		Input.set_custom_mouse_cursor(cursor.texture, cursor.type)
 
 
 func set_char_select_window_visiblity(active):
