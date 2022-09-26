@@ -2,8 +2,8 @@
 
 [ext_resource path="res://assets/fonts/sitka-small-652.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/images/box.png" type="Texture" id=2]
-[ext_resource path="res://CharacterButton.tscn" type="PackedScene" id=4]
-[ext_resource path="res://CharacterWindow.gd" type="Script" id=6]
+[ext_resource path="res://src/objects/ui/buttons/CharacterButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/objects/ui/windows/CharacterWindow.gd" type="Script" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 14

@@ -13,7 +13,7 @@ func _on_CharacterButton_selected(id: int):
 
 
 func _ready():
-	var custom_char = preload("res://CustomCharacterButton.tscn").instance()
+	var custom_char = preload("res://src/objects/ui/buttons/CustomCharacterButton.tscn").instance()
 	custom_char.connect("selected", self, "_on_CharacterButton_selected")
 	
 	for id in Constants.CHARACTERS_ID.values():

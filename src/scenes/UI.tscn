@@ -1,127 +1,16 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://DialogBoxUI.tscn" type="PackedScene" id=1]
-[ext_resource path="res://CharacterWindow.tscn" type="PackedScene" id=2]
-[ext_resource path="res://PortraitUI.tscn" type="PackedScene" id=3]
-[ext_resource path="res://UI.gd" type="Script" id=4]
+[ext_resource path="res://src/objects/ui/misc/DialogBoxUI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/objects/ui/windows/CharacterWindow.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/objects/ui/buttons/PortraitUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/scenes/UI.gd" type="Script" id=4]
 [ext_resource path="res://assets/fonts/sitka-small-652.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://assets/images/box.png" type="Texture" id=6]
-[ext_resource path="res://assets/images/close_highlight.png" type="Texture" id=7]
-[ext_resource path="res://panel_border.tres" type="StyleBox" id=8]
-[ext_resource path="res://assets/images/close.png" type="Texture" id=9]
-
-[sub_resource type="DynamicFont" id=7]
-use_mipmaps = true
-font_data = ExtResource( 5 )
-
-[sub_resource type="StyleBoxEmpty" id=13]
-
-[sub_resource type="StyleBoxEmpty" id=1]
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 1, 1, 1, 0.0784314 )
-
-[sub_resource type="StyleBoxEmpty" id=14]
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 1, 1, 1, 0.156863 )
-
-[sub_resource type="DynamicFont" id=10]
-use_mipmaps = true
-font_data = ExtResource( 5 )
-
-[sub_resource type="StyleBoxEmpty" id=21]
-
-[sub_resource type="StyleBoxFlat" id=22]
-bg_color = Color( 0.141176, 0.109804, 0.145098, 1 )
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color( 0.180392, 0.133333, 0.184314, 0 )
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-corner_detail = 12
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id=23]
-bg_color = Color( 0.141176, 0.109804, 0.145098, 0.54902 )
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color( 0.180392, 0.133333, 0.184314, 0 )
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-corner_detail = 12
-anti_aliasing = false
-
-[sub_resource type="DynamicFont" id=8]
-size = 14
-use_mipmaps = true
-font_data = ExtResource( 5 )
-
-[sub_resource type="StyleBoxTexture" id=15]
-texture = ExtResource( 6 )
-region_rect = Rect2( 0, 0, 128, 128 )
-margin_left = 15.0
-margin_right = 14.5897
-margin_top = 14.6979
-margin_bottom = 15.0
-
-[sub_resource type="StyleBoxEmpty" id=24]
-
-[sub_resource type="DynamicFont" id=18]
-size = 14
-use_mipmaps = true
-font_data = ExtResource( 5 )
-
-[sub_resource type="StyleBoxFlat" id=19]
-bg_color = Color( 0.180392, 0.133333, 0.184314, 1 )
-border_width_top = 20
-border_color = Color( 0.141176, 0.109804, 0.145098, 1 )
-border_blend = true
-expand_margin_top = 20.0
-
-[sub_resource type="DynamicFont" id=20]
-size = 14
-use_mipmaps = true
-font_data = ExtResource( 5 )
-
-[sub_resource type="Theme" id=5]
-default_font = SubResource( 20 )
-Button/fonts/font = SubResource( 7 )
-Button/styles/disabled = SubResource( 13 )
-Button/styles/focus = SubResource( 1 )
-Button/styles/hover = SubResource( 2 )
-Button/styles/normal = SubResource( 14 )
-Button/styles/pressed = SubResource( 3 )
-Label/fonts/font = SubResource( 10 )
-LineEdit/icons/clear = ExtResource( 9 )
-LineEdit/styles/focus = SubResource( 21 )
-LineEdit/styles/normal = SubResource( 22 )
-LineEdit/styles/read_only = SubResource( 23 )
-TextEdit/colors/background_color = Color( 0, 0, 0, 0 )
-TextEdit/fonts/font = SubResource( 8 )
-TextEdit/styles/normal = SubResource( 15 )
-Tree/styles/bg = SubResource( 22 )
-Tree/styles/bg_focus = SubResource( 24 )
-WindowDialog/colors/title_color = Color( 1, 1, 1, 1 )
-WindowDialog/fonts/title_font = SubResource( 18 )
-WindowDialog/icons/close = ExtResource( 9 )
-WindowDialog/icons/close_highlight = ExtResource( 7 )
-WindowDialog/styles/panel = SubResource( 19 )
+[ext_resource path="res://src/themes/DefaultTheme.tres" type="Theme" id=6]
+[ext_resource path="res://src/themes/fonts/TitleLabelFont.tres" type="DynamicFont" id=7]
+[ext_resource path="res://src/themes/panels/panel_border.tres" type="StyleBox" id=8]
 
 [sub_resource type="StyleBoxFlat" id=17]
 bg_color = Color( 0.117647, 0.117647, 0.117647, 0.862745 )
-
-[sub_resource type="DynamicFont" id=25]
-size = 32
-font_data = ExtResource( 5 )
 
 [sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0.117647, 0.117647, 0.117647, 1 )
@@ -135,7 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 1.0
 margin_bottom = 1.0
-theme = SubResource( 5 )
+theme = ExtResource( 6 )
 script = ExtResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -239,7 +128,6 @@ box_size = 400.0
 
 [node name="CharacterSelect" type="Control" parent="."]
 unique_name_in_owner = true
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -252,7 +140,7 @@ custom_styles/panel = SubResource( 17 )
 anchor_right = 1.0
 margin_top = 61.0
 margin_bottom = 132.0
-custom_fonts/font = SubResource( 25 )
+custom_fonts/font = ExtResource( 7 )
 text = "Selecione o personagem"
 align = 1
 valign = 1
