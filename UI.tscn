@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/images/close.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=7]
+use_mipmaps = true
 font_data = ExtResource( 5 )
 
 [sub_resource type="StyleBoxEmpty" id=13]
