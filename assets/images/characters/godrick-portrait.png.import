@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ranni-protrait.png-cac3afe33390d8c04ef28944d738d2e3.stex"
+path="res://.import/godrick-portrait.png-3a3c6f28f94b26aed6f260631cf4bb8a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/characters/ranni-protrait.png"
-dest_files=[ "res://.import/ranni-protrait.png-cac3afe33390d8c04ef28944d738d2e3.stex" ]
+source_file="res://assets/images/characters/godrick-portrait.png"
+dest_files=[ "res://.import/godrick-portrait.png-3a3c6f28f94b26aed6f260631cf4bb8a.stex" ]
 
 [params]
 

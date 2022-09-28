@@ -3,9 +3,10 @@ extends Node
 const CHARACTERS_IMAGES := [
 	preload("res://assets/images/characters/blaidd-portrait.png"),
 	preload("res://assets/images/characters/melina-portrait.png"),
-	preload("res://assets/images/characters/malenia-protrait.png"),
+	preload("res://assets/images/characters/malenia-portrait.png"),
 	preload("res://assets/images/characters/maliketh-portrait.png"),
-	preload("res://assets/images/characters/ranni-protrait.png")
+	preload("res://assets/images/characters/ranni-portrait.png"),
+	preload("res://assets/images/characters/godrick-portrait.png"),
 ]
 
 const CHARACTERS_ID := {
@@ -13,29 +14,34 @@ const CHARACTERS_ID := {
 	"Melina": 1,
 	"Malenia": 2,
 	"Maliketh": 3,
-	"Ranni": 4
+	"Ranni": 4,
+	"Godrick": 5
 }
 
 const CHARACTERS := {
 	0: {
 		"name": "Blaidd",
-		"texture": preload("res://assets/images/characters/blaidd-portrait.png")
+		"texture": CHARACTERS_IMAGES[0]
 	},
 	1: {
 		"name": "Melina",
-		"texture": preload("res://assets/images/characters/melina-portrait.png")
+		"texture": CHARACTERS_IMAGES[1]
 	},
 	2: {
 		"name": "Malenia",
-		"texture": preload("res://assets/images/characters/malenia-protrait.png")
+		"texture": CHARACTERS_IMAGES[2]
 	},
 	3: {
 		"name": "Maliketh",
-		"texture": preload("res://assets/images/characters/maliketh-portrait.png")
+		"texture": CHARACTERS_IMAGES[3]
 	},
 	4: {
 		"name": "Ranni",
-		"texture": preload("res://assets/images/characters/ranni-protrait.png")
+		"texture": CHARACTERS_IMAGES[4]
+	},
+	5: {
+		"name": "Godrick",
+		"texture": CHARACTERS_IMAGES[5]
 	}
 }
 

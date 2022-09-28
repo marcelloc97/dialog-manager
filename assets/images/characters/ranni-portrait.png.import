@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/malenia-protrait.png-f3891a1f88d99a3af54f2ec0ebe1b969.stex"
+path="res://.import/ranni-portrait.png-3dd734d31fd93b2248b824026444a047.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/characters/malenia-protrait.png"
-dest_files=[ "res://.import/malenia-protrait.png-f3891a1f88d99a3af54f2ec0ebe1b969.stex" ]
+source_file="res://assets/images/characters/ranni-portrait.png"
+dest_files=[ "res://.import/ranni-portrait.png-3dd734d31fd93b2248b824026444a047.stex" ]
 
 [params]
 
