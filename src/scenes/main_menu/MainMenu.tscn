@@ -1,12 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/themes/fonts/MainButtonFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://src/themes/fonts/NormalLabelFont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://assets/images/box.png" type="Texture" id=3]
 [ext_resource path="res://src/scenes/main_menu/MainMenu.gd" type="Script" id=4]
 [ext_resource path="res://src/themes/fonts/TitleLabelFont.tres" type="DynamicFont" id=5]
-[ext_resource path="res://assets/images/close_highlight.png" type="Texture" id=6]
-[ext_resource path="res://assets/images/close.png" type="Texture" id=7]
+[ext_resource path="res://src/objects/ui/buttons/OptionsButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/themes/DefaultTheme.tres" type="Theme" id=8]
 
 [sub_resource type="StyleBoxTexture" id=1]
@@ -44,15 +43,7 @@ text = "Dialog Manager"
 align = 1
 valign = 1
 
-[node name="OptionsButton" type="TextureButton" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -28.0
-margin_top = 12.0
-margin_right = -12.0
-margin_bottom = 28.0
-texture_normal = ExtResource( 7 )
-texture_hover = ExtResource( 6 )
+[node name="OptionsButton" parent="." instance=ExtResource( 6 )]
 
 [node name="Buttons" type="VBoxContainer" parent="."]
 anchor_left = 0.5

@@ -64,6 +64,10 @@ func _on_CreditsButton_pressed():
 func _on_CreditsOkButton_pressed():
 	credits_container.visible = false
 
+func _on_OptionsButton_pressed():
+	var options_scene = SceneLoader.scenes['Options'].instance()
+	get_tree().get_root().add_child(options_scene)
+
 func _on_FileDialog_file_selected(path: String):
 	var file := Image.new()
 	var texture := ImageTexture.new()

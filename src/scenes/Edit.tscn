@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/themes/panels/panel_border.tres" type="StyleBox" id=1]
 [ext_resource path="res://assets/fonts/sitka-small-652.ttf" type="DynamicFontData" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://src/objects/ui/misc/DialogBoxUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/themes/DefaultTheme.tres" type="Theme" id=7]
 [ext_resource path="res://src/scenes/Edit.gd" type="Script" id=8]
+[ext_resource path="res://src/objects/ui/buttons/OptionsButton.tscn" type="PackedScene" id=9]
 
 [sub_resource type="StyleBoxFlat" id=17]
 bg_color = Color( 0.117647, 0.117647, 0.117647, 0.862745 )
@@ -22,8 +23,6 @@ font_data = ExtResource( 2 )
 [node name="Edit" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 1.0
-margin_bottom = 1.0
 theme = ExtResource( 7 )
 script = ExtResource( 8 )
 
@@ -37,14 +36,14 @@ __meta__ = {
 
 [node name="CreditsButton" type="Button" parent="."]
 unique_name_in_owner = true
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -116.0
-margin_top = 11.0
-margin_right = -11.0
-margin_bottom = 43.0
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 117.0
+margin_bottom = 44.0
 rect_min_size = Vector2( 32, 32 )
 text = "Créditos"
+
+[node name="OptionsButton" parent="." instance=ExtResource( 9 )]
 
 [node name="TextEdit" type="TextEdit" parent="."]
 unique_name_in_owner = true
@@ -214,6 +213,7 @@ text = "OK"
 
 [connection signal="resized" from="." to="." method="_on_resized"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]
+[connection signal="pressed" from="OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="text_changed" from="TextEdit" to="." method="_on_TextEdit_text_changed"]
 [connection signal="pressed" from="Actions/Talk" to="." method="_on_Talk_pressed"]
 [connection signal="pressed" from="Actions/Clear" to="." method="_on_Clear_pressed"]

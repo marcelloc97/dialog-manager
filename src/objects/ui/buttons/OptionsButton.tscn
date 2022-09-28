@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/images/close_highlight.png" type="Texture" id=1]
+[ext_resource path="res://assets/images/close.png" type="Texture" id=2]
+
+[node name="OptionsButton" type="TextureButton"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -28.0
+margin_top = 12.0
+margin_right = -12.0
+margin_bottom = 28.0
+texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 1 )

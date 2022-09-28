@@ -2,10 +2,8 @@ extends Control
 
 
 func _on_OptionsButton_pressed():
-	var error = get_tree().change_scene_to(SceneLoader.scenes['Options'])
-	
-	if error != OK:
-		push_error("Couln't load scene Options")
+	var options_scene = SceneLoader.scenes['Options'].instance()
+	get_tree().get_root().add_child(options_scene)
 
 func _on_PlayButton_pressed():
 	var error = get_tree().change_scene_to(SceneLoader.scenes['Play'])
