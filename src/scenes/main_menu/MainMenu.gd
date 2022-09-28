@@ -1,12 +1,20 @@
 extends Control
 
-var options_menu = preload("res://src/scenes/options_menu/OptionsMenu.tscn").instance()
-var edit_scene = preload("res://src/scenes/UI.tscn").instance()
-
 
 func _on_OptionsButton_pressed():
-	get_node("/root/Main").add_child(options_menu)
+	var error = get_tree().change_scene_to(SceneLoader.scenes['Options'])
+	
+	if error != OK:
+		push_error("Couln't load scene Options")
+
+func _on_PlayButton_pressed():
+	var error = get_tree().change_scene_to(SceneLoader.scenes['Play'])
+	
+	if error != OK:
+		push_error("Couln't load scene Play")
 
 func _on_EditButton_pressed():
-	get_node("/root/Main").add_child(edit_scene)
-	get_node("/root/Main").remove_child(self)
+	var error = get_tree().change_scene_to(SceneLoader.scenes['Edit'])
+	
+	if error != OK:
+		push_error("Couln't load scene Edit")

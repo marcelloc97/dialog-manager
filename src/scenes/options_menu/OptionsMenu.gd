@@ -1,6 +1,8 @@
 extends Control
 
 
-
 func _on_BackButton_pressed():
-	get_node("/root/Main").remove_child(self)
+	var error = get_tree().change_scene_to(SceneLoader.scenes['MainMenu'])
+	
+	if error != OK:
+		push_error("Couln't load scene MainMenu")

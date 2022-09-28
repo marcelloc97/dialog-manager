@@ -21,11 +21,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Dialog Manager"
-run/main_scene="res://src/scenes/Main.tscn"
+run/main_scene="res://src/scenes/main_menu/MainMenu.tscn"
 config/icon="res://assets/images/characters/blaidd-portrait.png"
 
 [autoload]
 
+SceneLoader="*res://src/scripts/singletons/SceneLoader.gd"
 Constants="*res://src/scripts/singletons/Constants.gd"
 
 [display]

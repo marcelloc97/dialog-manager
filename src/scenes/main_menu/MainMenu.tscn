@@ -24,6 +24,7 @@ bg_color = Color( 0.0784314, 0.0784314, 0.0784314, 0.627451 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 8 )
+theme_type_variation = "Default"
 script = ExtResource( 4 )
 
 [node name="Background" type="ColorRect" parent="."]
@@ -130,4 +131,5 @@ dialog_text = "Really want to exit?"
 dialog_hide_on_ok = false
 
 [connection signal="pressed" from="OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="Buttons/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="Buttons/EditButton" to="." method="_on_EditButton_pressed"]
