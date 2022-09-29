@@ -8,11 +8,7 @@ onready var image := $"%Image"
 
 
 func _ready():
-	if !clickable:
-		mouse_filter = Control.MOUSE_FILTER_IGNORE
-		disabled = true
-	else:
-		mouse_filter = Control.MOUSE_FILTER_STOP
+	change_state()
 
 
 func set_texture_by_id(id: int):
@@ -23,3 +19,17 @@ func set_texture_by_id(id: int):
 func set_texture(texture: Texture):
 	image.texture = texture
 	emit_signal('texture_changed')
+
+func set_clickable(state: bool):
+	clickable = state
+	change_state()
+
+func change_state():
+	prints('is clickable?', clickable)
+	if !clickable:
+		mouse_filter = Control.MOUSE_FILTER_IGNORE
+		disabled = true
+	else:
+		yield(get_tree().create_timer(0.1), 'timeout')
+		mouse_filter = Control.MOUSE_FILTER_STOP
+		disabled = false

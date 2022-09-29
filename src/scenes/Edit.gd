@@ -73,3 +73,5 @@ func set_char_select_window_visiblity(active):
 		char_select_window.popup()
 	elif char_select_window.visible and !active:
 		char_select_window.visible = false
+	
+	portrait.set_clickable(!active)

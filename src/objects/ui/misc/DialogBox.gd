@@ -15,7 +15,7 @@ onready var tween := $Tween
 func _ready():
 	yield(owner, 'ready')
 	
-	char_name_label.text = ''
+	char_name_label.text = 'Blaidd'
 	
 	message_label.bbcode_text = ''
 	message_label.percent_visible = 0
@@ -32,12 +32,7 @@ func _input(event: InputEvent):
 
 func set_text(text: String):
 	message_label.percent_visible = 0
-	message_label.bbcode_text = text#"[center]%s[/center]" % text
-	
-#	if not _is_active:
-#		_open_dialog()
-#		yield(get_tree().create_timer(transition_duration), 'timeout')
-#		_is_active = true
+	message_label.bbcode_text = text
 	
 	_animate_label()
 
@@ -47,11 +42,6 @@ func set_char_name(char_name: String):
 func clear_and_close():
 	message_label.bbcode_text = ''
 	char_name_label.text = ''
-	
-#	if _is_active:
-#		_close_dialog()
-#		yield(get_tree().create_timer(transition_duration), 'timeout')
-#		_is_active = false
 
 func _open_dialog():
 	tween.stop_all()
