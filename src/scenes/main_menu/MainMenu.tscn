@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/themes/fonts/MainButtonFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://src/themes/fonts/NormalLabelFont.tres" type="DynamicFont" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://src/scenes/main_menu/MainMenu.gd" type="Script" id=4]
 [ext_resource path="res://src/themes/fonts/TitleLabelFont.tres" type="DynamicFont" id=5]
 [ext_resource path="res://src/objects/ui/buttons/OptionsButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/fonts/sitka-small-652.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://src/themes/DefaultTheme.tres" type="Theme" id=8]
 
 [sub_resource type="StyleBoxTexture" id=1]
@@ -18,6 +19,13 @@ margin_bottom = 15.0
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.0784314, 0.0784314, 0.0784314, 0.627451 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.117647, 0.117647, 0.117647, 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 19
+font_data = ExtResource( 7 )
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -42,6 +50,15 @@ custom_fonts/font = ExtResource( 5 )
 text = "Dialog Manager"
 align = 1
 valign = 1
+
+[node name="CreditsButton" type="Button" parent="."]
+unique_name_in_owner = true
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 117.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 32, 32 )
+text = "Créditos"
 
 [node name="OptionsButton" parent="." instance=ExtResource( 6 )]
 
@@ -121,6 +138,44 @@ popup_exclusive = true
 dialog_text = "Really want to exit?"
 dialog_hide_on_ok = false
 
+[node name="Credits" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="Credits"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 3 )
+
+[node name="Credits" type="Label" parent="Credits"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -56.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 4 )
+text = "Artes por Anthony Souza (Padeiro Cósmico)
+Programação por Marcello Carvalhal (N0obly616)
+
+Ideia da execução do projeto por Marcello Carvalhal
+Ideia das artes por Anthony Souza"
+align = 1
+valign = 1
+
+[node name="OkButton" type="Button" parent="Credits"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -63.0
+margin_top = -91.0
+margin_right = 63.0
+margin_bottom = -22.0
+text = "OK"
+
+[connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="Buttons/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="Buttons/EditButton" to="." method="_on_EditButton_pressed"]
+[connection signal="pressed" from="Credits/OkButton" to="." method="_on_CreditsOkButton_pressed"]

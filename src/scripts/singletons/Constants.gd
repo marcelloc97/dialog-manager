@@ -10,6 +10,7 @@ const CHARACTERS_IMAGES := [
 ]
 
 const CHARACTERS_ID := {
+	"Custom": -1,
 	"Blaidd": 0,
 	"Melina": 1,
 	"Malenia": 2,

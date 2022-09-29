@@ -1,7 +1,7 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/themes/panels/panel_border.tres" type="StyleBox" id=1]
-[ext_resource path="res://assets/fonts/sitka-small-652.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://src/objects/ui/windows/ImageFileWindow.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/themes/fonts/TitleLabelFont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://src/objects/ui/buttons/PortraitUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/objects/ui/windows/CharacterWindow.tscn" type="PackedScene" id=5]
@@ -10,15 +10,24 @@
 [ext_resource path="res://src/scenes/Edit.gd" type="Script" id=8]
 [ext_resource path="res://src/objects/ui/buttons/OptionsButton.tscn" type="PackedScene" id=9]
 
+[sub_resource type="InputEventKey" id=18]
+control = true
+command = true
+scancode = 83
+
+[sub_resource type="ShortCut" id=19]
+shortcut = SubResource( 18 )
+
+[sub_resource type="InputEventKey" id=20]
+control = true
+command = true
+scancode = 88
+
+[sub_resource type="ShortCut" id=21]
+shortcut = SubResource( 20 )
+
 [sub_resource type="StyleBoxFlat" id=17]
 bg_color = Color( 0.117647, 0.117647, 0.117647, 0.862745 )
-
-[sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 0.117647, 0.117647, 0.117647, 1 )
-
-[sub_resource type="DynamicFont" id=16]
-size = 19
-font_data = ExtResource( 2 )
 
 [node name="Edit" type="Control"]
 anchor_right = 1.0
@@ -33,15 +42,6 @@ color = Color( 0.141176, 0.109804, 0.145098, 1 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="CreditsButton" type="Button" parent="."]
-unique_name_in_owner = true
-margin_left = 12.0
-margin_top = 12.0
-margin_right = 117.0
-margin_bottom = 44.0
-rect_min_size = Vector2( 32, 32 )
-text = "Créditos"
 
 [node name="OptionsButton" parent="." instance=ExtResource( 9 )]
 
@@ -72,6 +72,7 @@ margin_right = 385.0
 margin_bottom = 65.0
 rect_min_size = Vector2( 100, 65 )
 hint_tooltip = "Permite iniciar ou continuar o diálogo com base do conteúdo acima"
+shortcut = SubResource( 19 )
 text = "Falar"
 
 [node name="Border" type="Panel" parent="Actions/Talk"]
@@ -86,6 +87,7 @@ margin_right = 515.0
 margin_bottom = 65.0
 rect_min_size = Vector2( 100, 65 )
 hint_tooltip = "Limpa o conteúdo e o diálogo"
+shortcut = SubResource( 21 )
 text = "Limpar"
 
 [node name="Border" type="Panel" parent="Actions/Clear"]
@@ -148,7 +150,6 @@ valign = 1
 
 [node name="Window" parent="CharacterSelect" instance=ExtResource( 5 )]
 unique_name_in_owner = true
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -157,67 +158,19 @@ margin_left = -272.0
 margin_top = -141.0
 margin_right = 272.0
 margin_bottom = 141.0
+portrait_path = NodePath("../../Dialog/Portrait")
+dialog_box_path = NodePath("../../Dialog/DialogBox")
+file_window_path = NodePath("../FileDialog")
 
-[node name="FileDialog" type="FileDialog" parent="CharacterSelect"]
-unique_name_in_owner = true
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -399.0
-margin_top = -290.0
-margin_right = 399.0
-margin_bottom = 290.0
-mouse_filter = 2
-popup_exclusive = true
-window_title = "Open a File"
-mode = 0
-access = 2
-filters = PoolStringArray( "*.png", "*.jpeg", "*.jpg" )
-
-[node name="Credits" type="Control" parent="."]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="Panel" type="Panel" parent="Credits"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 9 )
-
-[node name="Credits" type="Label" parent="Credits"]
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_top = -56.0
-margin_bottom = 56.0
-custom_fonts/font = SubResource( 16 )
-text = "Artes por Anthony Souza (Padeiro Cósmico)
-Programação por Marcello Carvalhal (N0obly616)
-
-Ideia da execução do projeto por Marcello Carvalhal
-Ideia das artes por Anthony Souza"
-align = 1
-valign = 1
-
-[node name="OkButton" type="Button" parent="Credits"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -63.0
-margin_top = -91.0
-margin_right = 63.0
-margin_bottom = -22.0
-text = "OK"
+[node name="FileDialog" parent="CharacterSelect" instance=ExtResource( 2 )]
+portrait_path = NodePath("../../Dialog/Portrait")
 
 [connection signal="resized" from="." to="." method="_on_resized"]
-[connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="text_changed" from="TextEdit" to="." method="_on_TextEdit_text_changed"]
 [connection signal="pressed" from="Actions/Talk" to="." method="_on_Talk_pressed"]
 [connection signal="pressed" from="Actions/Clear" to="." method="_on_Clear_pressed"]
 [connection signal="pressed" from="Dialog/Portrait" to="." method="_on_Portrait_pressed"]
+[connection signal="texture_changed" from="Dialog/Portrait" to="." method="_on_Portrait_texture_changed"]
 [connection signal="popup_hide" from="CharacterSelect/Window" to="." method="_on_Window_popup_hide"]
-[connection signal="file_selected" from="CharacterSelect/FileDialog" to="." method="_on_FileDialog_file_selected"]
-[connection signal="pressed" from="Credits/OkButton" to="." method="_on_CreditsOkButton_pressed"]
+[connection signal="popup_hide" from="CharacterSelect/FileDialog" to="." method="_on_FileDialog_popup_hide"]

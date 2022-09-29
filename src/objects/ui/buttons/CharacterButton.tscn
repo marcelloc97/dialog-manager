@@ -17,6 +17,7 @@ margin_right = 64.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 128, 128 )
 mouse_default_cursor_shape = 2
+action_mode = 0
 texture_normal = ExtResource( 3 )
 expand = true
 script = ExtResource( 2 )

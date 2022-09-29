@@ -1,18 +1,24 @@
 extends Control
+#warnings-disable
 
+onready var credits_container := $Credits
+
+
+func _on_CreditsButton_pressed():
+	credits_container.visible = true
+
+func _on_CreditsOkButton_pressed():
+	credits_container.visible = false
 
 func _on_OptionsButton_pressed():
-	var options_scene = SceneLoader.scenes['Options'].instance()
-	get_tree().get_root().add_child(options_scene)
+	ProgramManager.set_scene_overlay('Options')
 
 func _on_PlayButton_pressed():
-	var error = get_tree().change_scene_to(SceneLoader.scenes['Play'])
-	
-	if error != OK:
-		push_error("Couln't load scene Play")
+	ProgramManager.change_scene('Play')
 
 func _on_EditButton_pressed():
-	var error = get_tree().change_scene_to(SceneLoader.scenes['Edit'])
-	
-	if error != OK:
-		push_error("Couln't load scene Edit")
+	ProgramManager.change_scene('Edit')
+
+
+func _ready():
+	credits_container.visible = false

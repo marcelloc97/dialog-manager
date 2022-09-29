@@ -30,11 +30,9 @@ func _input(event: InputEvent):
 			message_label.percent_visible = 1
 
 
-func set_text(char_name: String, text: String):
+func set_text(text: String):
 	message_label.percent_visible = 0
 	message_label.bbcode_text = text#"[center]%s[/center]" % text
-	
-	char_name_label.text = char_name
 	
 #	if not _is_active:
 #		_open_dialog()
@@ -42,6 +40,9 @@ func set_text(char_name: String, text: String):
 #		_is_active = true
 	
 	_animate_label()
+
+func set_char_name(char_name: String):
+	char_name_label.text = char_name
 
 func clear_and_close():
 	message_label.bbcode_text = ''
